@@ -12,7 +12,7 @@
     <div class="container">
       <h1>HD44780 LCD custom char generator</h1>
       <div class="row">
-        <div class="col-sm-3 text-center">
+        <div class="col-sm-6 text-center">
           <div data-bind="foreach: matrix" class="lcd">
             <ul data-bind="foreach: $data">
               <li data-bind="css: {on: on }, click: toggle"></li>
@@ -21,7 +21,6 @@
           <button data-bind="click: invert" class="btn btn-primary">Invert</button>
           <button data-bind="click: clear" class="btn btn-warning">Clear</button>
         </div>
-        <div class="col-sm-3"></div>
         <div class="col-sm-6">
           <div data-toggle="buttons" class="btn-group">
             <label class="btn btn-primary">
