@@ -1,1 +1,49 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap-theme.css">
+    <link rel="stylesheet" href="./css/lcd.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>HD44780 LCD custom char generator</h1>
+      <div class="row">
+        <div class="col-sm-3 text-center">
+          <div data-bind="foreach: matrix" class="lcd">
+            <ul data-bind="foreach: $data">
+              <li data-bind="css: {on: on }, click: toggle"></li>
+            </ul>
+          </div>
+          <button data-bind="click: invert" class="btn btn-primary">Invert</button>
+          <button data-bind="click: clear" class="btn btn-warning">Clear</button>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <div data-toggle="buttons" class="btn-group">
+            <label class="btn btn-primary">
+              <input type="radio" name="base" value="2" data-bind="bsChecked: numberBase">Bin
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="base" value="8" data-bind="bsChecked: numberBase">Oct
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="base" value="10" data-bind="bsChecked: numberBase">Dec
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="base" value="16" data-bind="bsChecked: numberBase">Hex
+            </label>
+          </div>
+          <pre data-bind="text: generatedCode" readonly></pre>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/knockout.js"></script>
+  <script src="./js/lcd.js"></script>
+</html>
